@@ -6,7 +6,7 @@ if [ $ex_num -eq 0 ]
 then
 for curr_ex_num in {1..3}
 do
-	echo Running ex{$curr_ex_num} tests:
+	echo Running ex$curr_ex_num tests:
 	for test_num in {1..100}
 	do
 		./run_test.sh ex${curr_ex_num}.asm tests/ex${curr_ex_num}_test_${test_num} ex3_test_${test_num}
