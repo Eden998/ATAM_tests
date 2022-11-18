@@ -6,11 +6,11 @@ Run "./run_all_tests.sh <ex_num>" to run all the exercises tests, if ex_num is n
 
 ## Troubleshoot
 
-### "/bin/bash^M: bad interpreter: No such file or directory" Error
+### bad interpreter: No such file or directory" Error:
 
-run:
+  run:
 
-```
-sudo apt-get install dos2unix
-dox2unix run_all_tests.sh
-```
+  ```
+  sudo apt-get install dos2unix
+  dox2unix run_all_tests.sh
+  ```
