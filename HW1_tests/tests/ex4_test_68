@@ -1,0 +1,102 @@
+.global _start
+
+.section .text
+    mov $root, %rax
+    cmpq $node4, (%rax)
+    movq $node4, %rax
+    cmpq $4, (%rax)
+    cmpq $node3, 8(%rax)
+    cmpq $node9, 16(%rax)
+    movq $node3, %rax
+    cmpq $3, (%rax)
+    cmpq $node1, 8(%rax)
+    cmpq $new_node, 16(%rax)
+    movq $node9, %rax
+    cmpq $9, (%rax)
+    cmpq $node8, 8(%rax)
+    cmpq $node12, 16(%rax)
+    movq $node1, %rax
+    cmpq $1, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $node2, 16(%rax)
+    movq $new_node, %rax
+    cmpq $14, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node8, %rax
+    cmpq $8, (%rax)
+    cmpq $node7, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node12, %rax
+    cmpq $12, (%rax)
+    cmpq $node10, 8(%rax)
+    cmpq $node13, 16(%rax)
+    movq $node2, %rax
+    cmpq $2, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node7, %rax
+    cmpq $7, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node10, %rax
+    cmpq $10, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node13, %rax
+    cmpq $13, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $60, %rax
+    movq $0, %rdi
+    syscall
+
+bad_exit:
+    movq $60, %rax
+    movq $1, %rdi
+    syscall
+
+.section .data
+root:
+  .quad node4
+node4:
+  .quad 4
+  .quad node3
+  .quad node9
+node3:
+  .quad 3
+  .quad node1
+  .quad 0
+node9:
+  .quad 9
+  .quad node8
+  .quad node12
+node1:
+  .quad 1
+  .quad 0
+  .quad node2
+node8:
+  .quad 8
+  .quad node7
+  .quad 0
+node12:
+  .quad 12
+  .quad node10
+  .quad node13
+node2:
+  .quad 2
+  .quad 0
+  .quad 0
+node7:
+  .quad 7
+  .quad 0
+  .quad 0
+node10:
+  .quad 10
+  .quad 0
+  .quad 0
+node13:
+  .quad 13
+  .quad 0
+  .quad 0
+new_node: .quad 14, 0, 0

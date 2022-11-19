@@ -1,0 +1,134 @@
+.global _start
+
+.section .text
+    mov $root, %rax
+    cmpq $node30, (%rax)
+    movq $node30, %rax
+    cmpq $30, (%rax)
+    cmpq $node18, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node18, %rax
+    cmpq $18, (%rax)
+    cmpq $node14, 8(%rax)
+    cmpq $node21, 16(%rax)
+    movq $node14, %rax
+    cmpq $14, (%rax)
+    cmpq $node10, 8(%rax)
+    cmpq $node15, 16(%rax)
+    movq $node21, %rax
+    cmpq $21, (%rax)
+    cmpq $node19, 8(%rax)
+    cmpq $node26, 16(%rax)
+    movq $node10, %rax
+    cmpq $10, (%rax)
+    cmpq $node6, 8(%rax)
+    cmpq $node12, 16(%rax)
+    movq $node15, %rax
+    cmpq $15, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $node16, 16(%rax)
+    movq $node19, %rax
+    cmpq $19, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $node20, 16(%rax)
+    movq $node26, %rax
+    cmpq $26, (%rax)
+    cmpq $node24, 8(%rax)
+    cmpq $node29, 16(%rax)
+    movq $node6, %rax
+    cmpq $6, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $new_node, 16(%rax)
+    movq $node12, %rax
+    cmpq $12, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node16, %rax
+    cmpq $16, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node20, %rax
+    cmpq $20, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node24, %rax
+    cmpq $24, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $node29, %rax
+    cmpq $29, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $new_node, %rax
+    cmpq $22, (%rax)
+    cmpq $0, 8(%rax)
+    cmpq $0, 16(%rax)
+    movq $60, %rax
+    movq $0, %rdi
+    syscall
+
+bad_exit:
+    movq $60, %rax
+    movq $1, %rdi
+    syscall
+
+.section .data
+root:
+  .quad node30
+node30:
+  .quad 30
+  .quad node18
+  .quad 0
+node18:
+  .quad 18
+  .quad node14
+  .quad node21
+node14:
+  .quad 14
+  .quad node10
+  .quad node15
+node21:
+  .quad 21
+  .quad node19
+  .quad node26
+node10:
+  .quad 10
+  .quad node6
+  .quad node12
+node15:
+  .quad 15
+  .quad 0
+  .quad node16
+node19:
+  .quad 19
+  .quad 0
+  .quad node20
+node26:
+  .quad 26
+  .quad node24
+  .quad node29
+node6:
+  .quad 6
+  .quad 0
+  .quad 0
+node12:
+  .quad 12
+  .quad 0
+  .quad 0
+node16:
+  .quad 16
+  .quad 0
+  .quad 0
+node20:
+  .quad 20
+  .quad 0
+  .quad 0
+node24:
+  .quad 24
+  .quad 0
+  .quad 0
+node29:
+  .quad 29
+  .quad 0
+  .quad 0
+new_node: .quad 22, 0, 0
