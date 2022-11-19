@@ -3,54 +3,32 @@
 .section .text
     mov $root, %rax
     cmpq $node1, (%rax)
+    jne bad_exit
+
     movq $node1, %rax
     cmpq $1, (%rax)
+    jne bad_exit
     cmpq $node0, 8(%rax)
-    cmpq $node28, 16(%rax)
+    jne bad_exit
+    cmpq $new_node, 16(%rax)
+    jne bad_exit
+
     movq $node0, %rax
     cmpq $0, (%rax)
+    jne bad_exit
     cmpq $0, 8(%rax)
-    cmpq $new_node, 16(%rax)
-    movq $node28, %rax
-    cmpq $28, (%rax)
-    cmpq $node6, 8(%rax)
-    cmpq $node29, 16(%rax)
+    jne bad_exit
+    cmpq $0, 16(%rax)
+    jne bad_exit
+
     movq $new_node, %rax
-    cmpq $13, (%rax)
-    cmpq $0, 8(%rax)
-    cmpq $0, 16(%rax)
-    movq $node6, %rax
-    cmpq $6, (%rax)
-    cmpq $node2, 8(%rax)
-    cmpq $node17, 16(%rax)
-    movq $node29, %rax
-    cmpq $29, (%rax)
-    cmpq $0, 8(%rax)
-    cmpq $node30, 16(%rax)
-    movq $node2, %rax
     cmpq $2, (%rax)
+    jne bad_exit
     cmpq $0, 8(%rax)
-    cmpq $node4, 16(%rax)
-    movq $node17, %rax
-    cmpq $17, (%rax)
-    cmpq $node12, 8(%rax)
-    cmpq $node18, 16(%rax)
-    movq $node30, %rax
-    cmpq $30, (%rax)
-    cmpq $0, 8(%rax)
+    jne bad_exit
     cmpq $0, 16(%rax)
-    movq $node4, %rax
-    cmpq $4, (%rax)
-    cmpq $0, 8(%rax)
-    cmpq $0, 16(%rax)
-    movq $node12, %rax
-    cmpq $12, (%rax)
-    cmpq $0, 8(%rax)
-    cmpq $0, 16(%rax)
-    movq $node18, %rax
-    cmpq $18, (%rax)
-    cmpq $0, 8(%rax)
-    cmpq $0, 16(%rax)
+    jne bad_exit
+
     movq $60, %rax
     movq $0, %rdi
     syscall
@@ -66,45 +44,9 @@ root:
 node1:
   .quad 1
   .quad node0
-  .quad node28
+  .quad 0
 node0:
   .quad 0
   .quad 0
   .quad 0
-node28:
-  .quad 28
-  .quad node6
-  .quad node29
-node6:
-  .quad 6
-  .quad node2
-  .quad node17
-node29:
-  .quad 29
-  .quad 0
-  .quad node30
-node2:
-  .quad 2
-  .quad 0
-  .quad node4
-node17:
-  .quad 17
-  .quad node12
-  .quad node18
-node30:
-  .quad 30
-  .quad 0
-  .quad 0
-node4:
-  .quad 4
-  .quad 0
-  .quad 0
-node12:
-  .quad 12
-  .quad 0
-  .quad 0
-node18:
-  .quad 18
-  .quad 0
-  .quad 0
-new_node: .quad 13, 0, 0
+new_node: .quad 2, 0, 0
