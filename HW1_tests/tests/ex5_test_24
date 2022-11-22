@@ -207,7 +207,7 @@ bad_exit:
     syscall
 
 .section .data
-Value: .int 22
+val: .int 22
 head:
  .quad node_28_0
 node_28_0:
