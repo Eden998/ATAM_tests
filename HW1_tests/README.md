@@ -20,4 +20,5 @@ dox2unix run_all_tests.sh
 run:
 ```
 chmod 777 run_all_tests.sh
+chmod 777 run_test.sh
 ```
