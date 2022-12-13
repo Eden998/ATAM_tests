@@ -4,8 +4,12 @@
 unsigned short count_above(char separator,long limit);
 
 int main() {
-	short res = count_above('|', -207167621109833227);
-	printf("Test 200 output: %hi\n",res);
-	assert(res == 6);
+	short res = count_above(')', -1250388895498517109);
+	if(res != 8)	{
+		printf("Test 200 failed:\n");
+		printf("	Test 200 output: %hi\n",res);
+		printf("	Test 200 expected: 8\n");
+	}
+	else printf("Test 200 passed\n");
 	return 0;
 }

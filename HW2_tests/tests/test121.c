@@ -4,8 +4,12 @@
 unsigned short count_above(char separator,long limit);
 
 int main() {
-	short res = count_above('<', 982137117022546187);
-	printf("Test 121 output: %hi\n",res);
-	assert(res == 0);
+	short res = count_above(';', -7157296150119180327);
+	if(res != 2)	{
+		printf("Test 121 failed:\n");
+		printf("	Test 121 output: %hi\n",res);
+		printf("	Test 121 expected: 2\n");
+	}
+	else printf("Test 121 passed\n");
 	return 0;
 }

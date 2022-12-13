@@ -4,8 +4,12 @@
 unsigned short count_above(char separator,long limit);
 
 int main() {
-	short res = count_above('|', 939091185916067093);
-	printf("Test 143 output: %hi\n",res);
-	assert(res == 0);
+	short res = count_above('|', -6159716843273898227);
+	if(res != 2)	{
+		printf("Test 143 failed:\n");
+		printf("	Test 143 output: %hi\n",res);
+		printf("	Test 143 expected: 2\n");
+	}
+	else printf("Test 143 passed\n");
 	return 0;
 }

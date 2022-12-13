@@ -4,8 +4,12 @@
 unsigned short count_above(char separator,long limit);
 
 int main() {
-	short res = count_above('@', 101028025385401846);
-	printf("Test 189 output: %hi\n",res);
-	assert(res == 6);
+	short res = count_above('>', -4713100344819022593);
+	if(res != 4)	{
+		printf("Test 189 failed:\n");
+		printf("	Test 189 output: %hi\n",res);
+		printf("	Test 189 expected: 4\n");
+	}
+	else printf("Test 189 passed\n");
 	return 0;
 }

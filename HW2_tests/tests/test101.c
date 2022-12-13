@@ -4,8 +4,12 @@
 unsigned short count_above(char separator,long limit);
 
 int main() {
-	short res = count_above('?', 397319218667386527);
-	printf("Test 101 output: %hi\n",res);
-	assert(res == 1);
+	short res = count_above(';', 50078025664408785);
+	if(res != 12)	{
+		printf("Test 101 failed:\n");
+		printf("	Test 101 output: %hi\n",res);
+		printf("	Test 101 expected: 12\n");
+	}
+	else printf("Test 101 passed\n");
 	return 0;
 }
